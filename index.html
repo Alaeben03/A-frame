@@ -4,21 +4,50 @@
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
   </head>
   <body>
-        
     <a-scene>
-      
+      <!-- textured floor -->
+      <a-plane
+        src="https://i.imgur.com/mYmmbrp.jpg"
+        rotation="-90 0 0"
+        width="60"
+        height="60"
+        position="1.5 -1 0"
+      ></a-plane>
+      <!--Chairs and Table 3d-->
       <a-assets>
-        <a-asset-item id="cauldron" src="Chair/scene.gltf"></a-asset-item>
+        <a-asset-item
+          id="cauldron"
+          src="Table_chairs/scene.gltf"
+        ></a-asset-item>
       </a-assets>
-      
       <a-entity
-                gltf-model="#cauldron"
-                position="0 1.5 -4">
-      </a-entity>    
-    
-       
+        id="table"
+        gltf-model="#cauldron"
+        position="-1.8 -1 0"
+        scale="0.04 0.04 0.04"
+      ></a-entity>
+      <!--Desk-->
+      <a-assets>
+        <a-asset-item id="desk" src="Computer/scene.gltf"></a-asset-item>
+      </a-assets>
+      <a-entity
+        id="Desk"
+        gltf-model="#desk"
+        position="-8.5 -0.6 -12.93"
+        scale="0.06 0.06 0.06"
+      ></a-entity>
+      <!-- A room (Cube)-->
+      <a-entity
+        id="Room"
+        geometry="primitive: box; width: 20; height: 10; depth: 30"
+        material="side: double; src: url(https://cdn.glitch.global/2799dcf0-b567-4db9-ba60-ebbb78714a0f/Gintoki.webp?v=1715897852906)"
+        position="0 3.9 0"
+      ></a-entity>
+
+      <!--Camera-->
+      <a-entity id="rig" position="9.5 6 13.5">
+        <a-entity id="camera" camera look-controls></a-entity>
+      </a-entity>
     </a-scene>
   </body>
 </html>
-
-
